@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trilha 3º Ano · Prigeosc</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap');
+:root{--navy:#10204d;--ink:#172744;--teal:#00a6b8;--aqua:#dcfbfb;--orange:#ffba3e;--paper:#f5f7ff;--white:#fff;--line:#dce5f4;--red:#ef5b6a;--purple:#8e7cf5}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 7% 13%,#e4fbfc 0,transparent 23%),radial-gradient(circle at 94% 21%,#fff0d3 0,transparent 24%),var(--paper);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;padding-bottom:0}
+body.has-bottom-nav{padding-bottom:74px}
+.wrap{width:min(1200px,calc(100% - 40px));margin:auto}
+button{font-family:inherit}
+
+/* ---------- HERO ---------- */
+.hero{overflow:hidden;position:relative;background:linear-gradient(125deg,#132755 0%,#075d7b 54%,#00b7be 100%);color:#fff;min-height:500px}
+.hero:after{content:'';position:absolute;inset:auto -8% -180px auto;width:650px;height:650px;border:70px solid rgba(255,255,255,.10);border-radius:50%}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;position:relative;z-index:3;flex-wrap:wrap;gap:10px}
+.brand{font:800 24px Outfit;letter-spacing:-.7px}
+.brand span{color:#ffca63}
+.nav-links{display:flex;gap:4px;align-items:center;background:#ffffff14;border:1px solid #ffffff26;border-radius:99px;padding:5px;backdrop-filter:blur(8px);flex-wrap:wrap}
+.nav-links button,.nav-links a{color:#e9f9fb;background:transparent;border:0;text-decoration:none;font-weight:700;font-size:13px;padding:9px 14px;border-radius:99px;cursor:pointer;transition:.2s}
+.nav-links button:hover,.nav-links a:hover{background:#fff;color:var(--navy)}
+.hero-grid{position:relative;display:flex;flex-direction:column;align-items:stretch;min-height:auto;padding-bottom:10px}
+.hero-copy{position:relative;z-index:3;max-width:640px}
+.eyebrow{display:inline-block;background:#ffbd4b1d;border:1px solid #ffce74aa;border-radius:99px;padding:7px 13px;color:#ffd778;letter-spacing:1.8px;text-transform:uppercase;font-size:11px;font-weight:800}
+.hero h1{font:800 clamp(38px,5.6vw,62px)/1.02 Outfit;margin:16px 0;letter-spacing:-2px;text-shadow:0 4px 0 #001d3320;max-width:620px}
+.hero h1 em{font-style:normal;color:#baf6fa}
+.hero p{max-width:540px;font-size:18px;line-height:1.55;color:#d6edf2}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{border:0;border-radius:99px;padding:14px 22px;font-weight:800;font-size:14px;text-decoration:none;cursor:pointer;box-shadow:0 9px 18px #001d3030;transition:transform .2s,box-shadow .2s;display:inline-block}
+.btn:hover{transform:translateY(-3px);box-shadow:0 13px 24px #001d3042}
+.btn-primary{background:linear-gradient(135deg,#ffd367,#ffae2f);color:#392400}
+.btn-outline{color:#fff;background:transparent;border:1px solid #8ad7e0}
+.mascot-col{position:relative;z-index:2;display:flex;justify-content:center;align-items:flex-end;min-height:340px;margin-top:14px}
+.mascot{height:340px;width:auto;max-width:100%;object-fit:contain;object-position:bottom;filter:drop-shadow(12px 14px 0 rgba(0,0,0,.16))}
+.mascot-note{position:absolute;left:50%;transform:translateX(28%);top:0;width:260px;max-width:70vw;background:#fff;color:var(--navy);padding:12px 15px;border-radius:14px 14px 14px 2px;font-weight:700;font-size:12px;line-height:1.4;box-shadow:0 8px 25px #00374a55;z-index:4}
+.stats{margin-top:-34px;position:relative;z-index:5;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stat{background:#fff;padding:20px 24px;border-radius:16px;box-shadow:0 17px 32px #173b5b1b;border:1px solid #fff}
+.stat:before{content:'';display:block;width:36px;height:5px;background:linear-gradient(90deg,#00b6c1,#9ef3ef);border-radius:99px;margin-bottom:11px}
+.stat:nth-child(2):before{background:linear-gradient(90deg,#ffad30,#ffe08a)}
+.stat:nth-child(3):before{background:linear-gradient(90deg,#7f7af7,#c4b9ff)}
+.stat strong{display:block;color:var(--teal);font:800 30px Outfit}
+.stat span{font-size:13px;font-weight:700}
+@media(max-width:800px){
+  .hero{min-height:auto;padding-top:20px}
+  .hero-copy{max-width:100%;padding-bottom:0}
+  .nav-links{display:none}
+  .mascot-col{min-height:260px;margin-top:18px}
+  .mascot{height:230px}
+  .mascot-note{display:none}
+  .hero h1{font-size:42px}
+  .hero p{font-size:16px}
+  .stats{grid-template-columns:1fr;margin-top:-20px}
+}
+
+/* ---------- SECTION SHELL ---------- */
+.section{padding:76px 0}
+.kicker{font-weight:800;text-transform:uppercase;letter-spacing:1.8px;color:#058ba5;font-size:12px}
+.section h2{font:800 clamp(30px,4vw,46px)/1.05 Outfit;margin:8px 0 12px;letter-spacing:-1.2px;color:#09283f}
+.section-intro{max-width:700px;line-height:1.6;color:#5a7180;font-size:16px}
+@media(max-width:800px){.section{padding:52px 0}}
+
+/* ---------- TRILHA HEADER ---------- */
+.trilha-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:flex-end}
+.trilha-greet{font:800 15px Outfit;color:#09283f}
+.trilha-badges{display:flex;gap:10px;flex-wrap:wrap}
+.trilha-badge{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:9px 15px;font-weight:800;font-size:13px;color:#173249;box-shadow:0 6px 14px #063e5410}
+.trilha-level{margin-top:6px;font-weight:800;font-size:12px;color:#008ba3;text-transform:uppercase;letter-spacing:.6px}
+.trilha-progress-wrap{margin:22px 0 8px}
+.trilha-progress-track{background:#e3eef4;border-radius:99px;height:14px;overflow:hidden;box-shadow:inset 0 1px 3px #00000012}
+.trilha-progress-fill{height:100%;background:linear-gradient(90deg,#00b6c1,#ffb33e);border-radius:99px;transition:width .5s ease}
+.trilha-progress-label{margin-top:7px;font-size:12.5px;font-weight:700;color:#5a7180}
+
+.continue-card{margin:24px 0 8px;background:linear-gradient(120deg,#0d2a4c,#0a5b73);color:#fff;border-radius:20px;padding:24px 26px;display:flex;justify-content:space-between;gap:20px;align-items:center;box-shadow:0 18px 35px #063e5425;flex-wrap:wrap}
+.continue-card h3{margin:6px 0 4px;font:800 20px Outfit}
+.continue-card .continue-label{font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#8fe6ee}
+.continue-card p{margin:0;color:#cdeaef;font-size:13.5px;max-width:420px}
+.continue-progress{background:#ffffff26;border-radius:99px;height:8px;width:180px;overflow:hidden;margin-top:10px}
+.continue-progress span{display:block;height:100%;background:#ffbd4b;border-radius:99px}
+.continue-card .btn{white-space:nowrap}
+
+/* ---------- FILTERS ---------- */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:27px 0 8px}
+.filter{border:1px solid var(--line);background:#fff;color:#52707d;padding:10px 16px;border-radius:99px;font-weight:700;cursor:pointer;box-shadow:0 5px 12px #173b5b0b;transition:.2s}
+.filter:hover{transform:translateY(-2px)}
+.filter.active,.filter:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* ---------- GAME MAP ---------- */
+.game-map{position:relative;max-width:640px;margin:44px auto 0;padding:70px 0 30px}
+.game-map:before{content:'';position:absolute;left:50%;top:6px;bottom:30px;width:5px;margin-left:-2.5px;background:repeating-linear-gradient(to bottom,#bfe3e8 0 14px,transparent 14px 24px);border-radius:99px;z-index:0}
+.node{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:4px;width:168px;margin:0 auto 46px;background:#fff;border:3px solid var(--line);border-radius:22px;padding:16px 14px 14px;text-align:center;cursor:pointer;box-shadow:0 10px 22px #063e5414;transition:transform .18s,box-shadow .18s}
+.node:not(:disabled):hover{transform:translateY(-4px) scale(1.02);box-shadow:0 16px 30px #063e541f}
+.node:disabled{cursor:not-allowed;opacity:.55}
+.node-icon{font-size:26px;line-height:1}
+.node-num{font:800 11px Outfit;color:#00a5bd;letter-spacing:.5px}
+.node-title{font:700 13px/1.25 'DM Sans';color:#173249}
+.node-stars{font-size:12px;color:#ffb33e;letter-spacing:1px}
+.node-gift{position:absolute;top:-9px;right:-9px;background:#fff;border:2px solid var(--orange);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:13px;box-shadow:0 3px 8px #063e5424}
+.node-is-here{border-color:var(--orange)!important;box-shadow:0 0 0 6px #ffb33e30,0 10px 22px #063e5414}
+.node-here{position:absolute;display:flex;flex-direction:column;align-items:center;gap:3px;z-index:5;pointer-events:none;top:-62px;left:50%;transform:translateX(-50%)}
+.node-here img{height:56px;width:auto;filter:drop-shadow(3px 5px 0 #063e5424)}
+.node-here b{background:var(--orange);color:#392400;font:800 10px Outfit;padding:3px 9px;border-radius:99px;white-space:nowrap;letter-spacing:.2px}
+@media(min-width:640px){
+  .node-here-r .node-here{top:50%;left:100%;right:auto;transform:translateY(-50%);flex-direction:row;margin-left:16px;gap:8px}
+  .node-here-l .node-here{top:50%;right:100%;left:auto;transform:translateY(-50%);flex-direction:row-reverse;margin-right:16px;gap:8px}
+  .node-here-r .node-here img,.node-here-l .node-here img{height:64px}
+}
+.node-available{border-color:var(--teal);box-shadow:0 0 0 5px #00a6b81c,0 10px 22px #063e5414}
+.node-progress{border-color:var(--orange)}
+.node-done{border-color:#39c07a;background:#f3fbf6}
+.node-locked{background:#f4f6fa;color:#9fb0bd}
+.node-locked .node-title{color:#9fb0bd}
+@media(min-width:640px){
+  .game-map:before{left:50%}
+  .node:nth-child(odd){margin-right:auto;margin-left:0}
+  .node:nth-child(even){margin-left:auto;margin-right:0}
+}
+.final-node{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;width:200px;margin:10px auto 0;background:linear-gradient(135deg,#ffe9b8,#ffd267);border:3px solid #ffb33e;border-radius:24px;padding:20px 16px;text-align:center;cursor:pointer;box-shadow:0 14px 28px #a8650022}
+.final-node:disabled{opacity:.5;cursor:not-allowed;background:#eef1f6;border-color:var(--line)}
+.final-node .node-icon{font-size:34px}
+.final-node .node-title{font:800 14px Outfit;color:#5c3a00}
+.map-empty{text-align:center;color:#8098a4;padding:30px 0}
+
+/* ---------- ACHIEVEMENT / STATS ROW ---------- */
+.mini-stat-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.mini-stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-weight:800;font-size:13px;color:#173249;flex:1;min-width:120px;text-align:center}
+.mini-stat small{display:block;font-weight:700;color:#7c92a0;font-size:11px;margin-top:3px}
+.weak-box{margin-top:18px;background:#fff4d9;border:1px solid #ffdc8b;border-radius:16px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.weak-box b{color:#9a6500}
+.weak-box p{margin:4px 0 0;font-size:13px;color:#7a5a00}
+
+/* ---------- OTHER EXISTING SECTIONS (kept) ---------- */
+.exam-section{background:linear-gradient(120deg,#e7f8fa,#f6fcff)}
+.exam-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:27px 0 18px}
+.exam-tab{border:1px solid #b9dce2;background:white;color:#326171;border-radius:99px;padding:12px 20px;font-weight:800;cursor:pointer}
+.exam-tab.active{background:var(--navy);color:white;border-color:var(--navy)}
+.exam-panel{background:#fff;border-radius:18px;padding:28px;box-shadow:0 18px 35px #173b5b10}
+.exam-panel h3{font:800 28px Outfit;margin:0 0 7px}
+.exam-panel>p{color:#58717d;margin:0 0 18px;line-height:1.5}
+.exam-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.exam-card{background:#f3fafb;border-left:4px solid var(--teal);border-radius:10px;padding:16px}
+.exam-card h4{margin:0 0 7px;font:800 15px Outfit}
+.exam-card p{margin:0;color:#5c7480;font-size:13px;line-height:1.45}
+#temas{position:relative;overflow:hidden}
+.agenda{background:linear-gradient(135deg,#102451,#063e5e 55%,#087d91);color:#fff;position:relative}
+.agenda:before{content:'';position:absolute;inset:auto 0 0;height:160px;background:radial-gradient(ellipse at 75% 100%,#00c4ca2b 0,transparent 66%);pointer-events:none}
+.agenda .wrap{position:relative}
+.agenda h2{color:#ffd45d;text-shadow:0 3px 0 #001b3a66,0 0 22px #ffbd4b3d}
+.agenda .section-intro{color:#b6d4dc}
+.search{display:flex;background:#fff;border-radius:13px;padding:3px;max-width:620px;margin:25px 0;box-shadow:0 12px 24px #00172b36}
+.search input{border:0;outline:0;padding:13px 15px;width:100%;font:500 15px 'DM Sans';color:var(--ink)}
+.search span{background:#e2f9fa;color:#007a91;padding:10px 15px;border-radius:10px;font-weight:800}
+.month-nav{display:flex;gap:7px;overflow:auto;padding-bottom:10px;margin-bottom:18px}
+.month{white-space:nowrap;border:1px solid #43758a;background:transparent;color:#d5edf2;border-radius:99px;padding:8px 13px;font-size:12px;font-weight:800;cursor:pointer;transition:.2s}
+.month:hover{transform:translateY(-2px)}
+.month.active,.month:hover{background:#ffbd4b;color:#362300;border-color:#ffbd4b}
+.events{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.event{background:#fff;color:var(--ink);border-radius:13px;padding:0;overflow:hidden;border-top:5px solid #ffbd4b;box-shadow:0 10px 20px #00172b24;transition:transform .2s,box-shadow .2s;font-family:inherit;text-align:left;width:100%;cursor:pointer;min-height:185px}
+.event:hover{transform:translateY(-5px);box-shadow:0 17px 28px #00172b38}
+.event:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.event-photo{width:100%;height:112px;object-fit:contain;background:#12354b;display:block}
+.event-copy{padding:15px 18px 18px}
+.event .date{color:#008ca5;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.7px}
+.event h3{font:800 17px/1.15 Outfit;margin:9px 0}
+.event p{margin:0;color:#607682;line-height:1.47;font-size:13px}
+.event .open-hint{display:block;color:#008ba3;font-size:11px;font-weight:800;margin-top:10px}
+.hidden{display:none!important}
+.news{margin:25px 0 16px;background:#fff4d9;color:#543a00;border-radius:15px;padding:19px 20px;border:1px solid #ffdc8b;box-shadow:0 10px 19px #00172b22}
+.news .news-label{font-size:11px;font-weight:800;letter-spacing:1px;color:#9a6500;text-transform:uppercase}
+.news h3{font:800 18px/1.15 Outfit;margin:6px 0}
+.news p{font-size:14px;line-height:1.5;margin:0}
+.news a{color:#006d84;font-weight:800}
+.tip{margin:34px 0 0;background:#0c6079;border:1px solid #2db6c8;border-radius:16px;padding:18px 20px;display:flex;gap:14px;align-items:center;color:#eafcff;box-shadow:0 12px 24px #00172b29}
+.tip b{color:#ffcf6c}
+.redacao-table-wrap{overflow:auto;border-radius:18px;box-shadow:0 14px 35px #063e5415;background:#fff}
+.redacao-table{width:100%;min-width:760px;border-collapse:collapse;font-size:14px}
+.redacao-table th{background:linear-gradient(105deg,#10204d,#065c78);color:#fff;text-align:left;padding:15px 17px;font:800 15px Outfit}
+.redacao-table th:first-child{border-radius:17px 0 0 0}
+.redacao-table th:last-child{border-radius:0 17px 0 0}
+.redacao-table td{padding:16px 17px;border-bottom:1px solid #e5f0f2;vertical-align:top;line-height:1.45}
+.redacao-table td:first-child{font:800 17px Outfit;color:#6658cc}
+.redacao-table tbody tr:nth-child(even){background:#f4fbfc}
+.redacao-table tbody tr:hover{background:#fff3d8}
+.redacao-footnote{margin:14px 0 0;color:#58717d;font-size:12px;line-height:1.5}
+.practice-section{background:#082c45;color:#fff;position:relative;overflow:hidden}
+.practice-section:after{content:'✦';position:absolute;right:8%;top:-30px;color:#ffbd4b;font-size:150px;opacity:.16}
+.practice-section h2{color:#fff}
+.practice-section .section-intro{color:#c5e5ea}
+.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;position:relative;z-index:1}
+.practice-card{background:#fff;color:#173249;border-radius:16px;padding:22px;box-shadow:0 12px 25px #00152135;border:1px solid #ffffff70;transition:transform .2s,box-shadow .2s}
+.practice-card:hover{transform:translateY(-5px);box-shadow:0 18px 28px #00152152}
+.practice-card h3{font:800 22px Outfit;margin:0 0 8px}
+.practice-card p{color:#56707e;line-height:1.5;font-size:14px;min-height:63px}
+.practice-link{display:inline-block;margin-top:9px;background:linear-gradient(135deg,#ffd46e,#ffae2f);color:#352400;padding:11px 15px;border-radius:99px;text-decoration:none;font-weight:800;font-size:13px;box-shadow:0 7px 14px #ffad2c36}
+.practice-link:hover{transform:translateY(-2px)}
+@media(max-width:800px){.trail,.exam-grid,.events,.practice-grid{grid-template-columns:1fr}}
+@media(max-width:800px){.exam-grid,.events,.practice-grid{grid-template-columns:1fr}}
+footer.footer{background:#091a38;color:#9cc1ca;padding:27px 0 34px;font-size:13px}
+footer.footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer.footer b{color:#91f2f0}
+@media(max-width:800px){footer.footer .wrap{display:block}footer.footer p{margin:8px 0}}
+
+/* ---------- DIALOGS / MODALS ---------- */
+dialog{border:0;border-radius:20px;padding:0;width:min(700px,calc(100% - 28px));box-shadow:0 28px 80px #00192599;color:var(--ink)}
+dialog::backdrop{background:#031c2cb8;backdrop-filter:blur(3px)}
+.modal-inner{padding:30px;position:relative;overflow:hidden}
+.modal-type{color:#008fa7;text-transform:uppercase;font-size:11px;letter-spacing:1.4px;font-weight:800}
+.modal-inner h2{font:800 29px/1.1 Outfit;margin:10px 38px 15px 0}
+.modal-inner>p{color:#4d6978;line-height:1.65}
+.close{position:absolute;right:20px;top:19px;border:0;background:#e5f6f7;color:#087d91;width:35px;height:35px;border-radius:50%;font-size:23px;cursor:pointer;z-index:2}
+.close:focus-visible{outline:3px solid var(--orange)}
+.study-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.study-box{background:#f0f9fa;border-radius:12px;padding:15px}
+.study-box h3{margin:0 0 7px;font:800 14px Outfit;color:#073b52}
+.study-box p,.study-box li{margin:0;color:#577280;font-size:13px;line-height:1.5}
+.study-box ul{margin:0;padding-left:18px}
+.modal-cta{margin-top:18px;background:var(--navy);color:white;border-radius:12px;padding:14px;font-weight:700;font-size:13px;position:relative;padding-right:106px;min-height:72px;display:flex;align-items:center}
+.modal-stage-mascot{position:absolute;right:11px;bottom:-8px;height:90px;width:auto;object-fit:contain;filter:drop-shadow(4px 5px 0 #00192524);pointer-events:none}
+@media(max-width:600px){.modal-cta{padding-right:82px}.modal-stage-mascot{height:72px;right:4px;bottom:-5px}}
+.cameo-row{display:flex;align-items:center;gap:14px;margin-top:32px;padding-top:22px;border-top:1px dashed #c9dbe6}
+.cameo-row img{height:74px;width:auto;object-fit:contain;filter:drop-shadow(4px 6px 0 #063e5418);flex:0 0 auto}
+.cameo-row span{font-weight:800;font-size:13.5px;color:#5a7180;line-height:1.4}
+.agenda .cameo-row{border-top-color:#2f5a68}
+.agenda .cameo-row span{color:#cdeaef}
+.practice-section .cameo-row{border-top-color:#2a5468}
+.practice-section .cameo-row span{color:#cde8ec}
+.modal-news{margin-top:18px;background:#fff4d9;color:#543a00;border:1px solid #ffdc8b;border-radius:12px;padding:14px;font-size:13px;line-height:1.5}
+.modal-news small{display:block;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:#9a6500}
+.modal-news a{color:#006d84;font-weight:800}
+@media(max-width:600px){.modal-inner{padding:25px 18px}.modal-inner h2{font-size:25px}.study-grid{grid-template-columns:1fr}}
+
+/* mission modal */
+#missionModal{width:min(560px,calc(100% - 20px))}
+@media(max-width:640px){#missionModal{width:100%;height:100%;max-height:100%;border-radius:0;margin:0}}
+.m-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--line);gap:10px}
+.m-back{border:0;background:#eef3f6;color:#173249;width:38px;height:38px;border-radius:50%;font-size:18px;cursor:pointer;flex:0 0 auto}
+.m-back:focus-visible{outline:3px solid var(--orange)}
+.m-hearts{font-size:15px;letter-spacing:2px;white-space:nowrap}
+.m-body{padding:22px 22px 26px;min-height:280px}
+.m-etapa{color:#008ba3;font:800 11px Outfit;letter-spacing:1.6px;text-transform:uppercase}
+.m-title{font:800 24px/1.15 Outfit;margin:8px 0 14px;color:#09283f}
+.m-progress-track{background:#e3eef4;border-radius:99px;height:10px;overflow:hidden;margin-bottom:18px}
+.m-progress-fill{height:100%;background:linear-gradient(90deg,#00b6c1,#ffb33e);border-radius:99px;transition:width .35s ease}
+.m-section-label{font:800 12px Outfit;letter-spacing:1px;text-transform:uppercase;color:#008ba3;margin:18px 0 10px;display:flex;align-items:center;gap:6px}
+.m-concept{background:#f0f9fa;border-radius:12px;padding:13px 15px;margin-bottom:10px}
+.m-concept b{display:block;color:#073b52;font-size:14px}
+.m-concept span{color:#577280;font-size:13.5px;line-height:1.5}
+.m-examtip{background:#fff4d9;border:1px solid #ffdc8b;border-radius:12px;padding:13px 15px;font-size:13.5px;color:#7a5a00;line-height:1.5}
+.m-mascot-line{display:flex;gap:10px;align-items:flex-start;background:#eef3ff;border-radius:14px;padding:12px 14px;margin:16px 0;font-size:13.5px;color:#2a3a63}
+.m-mascot-line b{color:#10204d}
+.m-question{font:800 18px/1.35 Outfit;color:#09283f;margin:4px 0 18px}
+.m-qcount{font-size:12px;font-weight:800;color:#7c92a0;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.m-options{display:flex;flex-direction:column;gap:10px}
+.m-option{text-align:left;border:2px solid var(--line);background:#fff;border-radius:13px;padding:13px 16px;font-weight:700;font-size:14px;color:#173249;cursor:pointer;transition:.15s;min-height:44px}
+.m-option:hover{border-color:var(--teal)}
+.m-option.selected{border-color:var(--teal);background:#eafcfd}
+.m-option.correct{border-color:#39c07a;background:#e8faf0;color:#1e6b3f}
+.m-option.wrong{border-color:var(--red);background:#fdeceec}
+.m-tf-row{display:flex;gap:12px}
+.m-tf-row .m-option{flex:1;text-align:center}
+.m-confirm{margin-top:20px;width:100%;border:0;background:var(--navy);color:#fff;padding:15px;border-radius:13px;font-weight:800;font-size:14px;cursor:pointer;min-height:44px}
+.m-confirm:disabled{opacity:.4;cursor:not-allowed}
+.m-feedback{border-radius:16px;padding:18px;margin-top:6px}
+.m-feedback.ok{background:#e8faf0;border:1px solid #b7ecca}
+.m-feedback.bad{background:#fdecee;border:1px solid #f7c2c9}
+.m-feedback h4{margin:0 0 8px;font:800 18px Outfit}
+.m-feedback.ok h4{color:#1e6b3f}
+.m-feedback.bad h4{color:#a5273a}
+.m-feedback p{margin:0;font-size:13.5px;line-height:1.55;color:#3a4a55}
+.m-xp-pill{display:inline-block;margin-top:10px;background:#ffbd4b;color:#392400;font-weight:800;font-size:12px;padding:5px 11px;border-radius:99px}
+.m-complete{text-align:center;padding:10px 0}
+.m-complete .m-icon{font-size:52px;animation:bounceIn .5s ease}
+.m-complete h2{font:800 25px Outfit;margin:10px 0 4px}
+.m-complete .m-sub{color:#5a7180;margin-bottom:14px}
+.m-complete .m-stars{font-size:30px;color:#ffb33e;letter-spacing:6px;margin:10px 0}
+.m-complete .m-xp-big{font:800 17px Outfit;color:#008ba3;margin:6px 0}
+.m-complete .m-streakline{color:#5a7180;font-size:13.5px;margin-bottom:18px}
+.m-fail{text-align:center;padding:10px 0}
+.m-fail .m-icon{font-size:46px}
+.m-fail h2{font:800 21px Outfit;margin:10px 0 4px;color:#173249}
+.m-fail p{color:#5a7180;margin-bottom:18px}
+.m-fail-actions{display:flex;flex-direction:column;gap:10px}
+.m-btn{border:0;padding:14px;border-radius:13px;font-weight:800;font-size:14px;cursor:pointer;min-height:44px}
+.m-btn-primary{background:var(--navy);color:#fff}
+.m-btn-secondary{background:#eef3f6;color:#173249}
+.confetti-wrap{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.confetti{position:absolute;top:-20px;width:9px;height:14px;border-radius:2px;animation:confettiFall 1.6s ease-in forwards}
+@keyframes confettiFall{to{transform:translateY(420px) rotate(360deg);opacity:0}}
+@keyframes bounceIn{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.12);opacity:1}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.confetti,.m-icon{animation:none!important}}
+
+/* achievements modal */
+.ach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+.ach-item{border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;gap:10px;align-items:flex-start}
+.ach-item.locked{opacity:.42}
+.ach-item .ach-icon{font-size:24px}
+.ach-item b{display:block;font:800 13.5px Outfit;color:#09283f}
+.ach-item span{font-size:12px;color:#5a7180;line-height:1.4}
+@media(max-width:500px){.ach-grid{grid-template-columns:1fr}}
+
+/* rewards (mapas mentais) */
+.m-reward-grid{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:14px 0}
+.m-reward-thumb{border:2px solid var(--line);border-radius:12px;overflow:hidden;width:130px;height:96px;padding:0;cursor:pointer;background:#f4f6fa;transition:.15s}
+.m-reward-thumb:hover{border-color:var(--teal);transform:translateY(-2px)}
+.m-reward-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.maps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;margin-top:16px;max-height:56vh;overflow:auto;padding-right:2px}
+.maps-card{border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center;background:#fff;cursor:pointer;transition:.15s}
+.maps-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.maps-card.locked{opacity:.5;cursor:default}
+.maps-card.locked:hover{transform:none;border-color:var(--line)}
+.maps-card img{width:100%;height:90px;object-fit:cover;border-radius:8px;margin-bottom:6px;display:block}
+.maps-card b{display:block;font-size:11.5px;color:#173249;font-weight:800}
+
+/* settings modal */
+.settings-row{display:flex;justify-content:space-between;align-items:center;gap:14px;background:#f7fafc;border-radius:14px;padding:16px;margin-top:16px}
+.settings-row p{margin:0;font-size:13px;color:#5a7180}
+.confirm-reset{display:none;margin-top:16px;background:#fdecee;border:1px solid #f7c2c9;border-radius:14px;padding:16px}
+.confirm-reset.show{display:block}
+.confirm-reset p{margin:0 0 12px;color:#a5273a;font-weight:700;font-size:13.5px}
+.confirm-actions{display:flex;gap:10px}
+
+/* ---------- BOTTOM NAV (mobile) ---------- */
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);display:none;justify-content:space-around;padding:8px 2px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -8px 20px #063e5414}
+.bottom-nav button{border:0;background:transparent;display:flex;flex-direction:column;align-items:center;gap:2px;color:#7c92a0;font-size:9.5px;font-weight:800;cursor:pointer;min-width:40px;min-height:44px;padding:4px 3px;border-radius:12px;flex:1 1 0}
+.bottom-nav button .bn-icon{font-size:17px}
+.bottom-nav button.active{color:var(--teal)}
+@media(max-width:800px){.bottom-nav{display:flex}}
+
+/* accessibility */
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand">PRIGE<span>OSC</span> · TRILHA</div>
+      <div class="nav-links">
+        <button data-nav="#top">🏠 Início</button>
+        <button data-nav="#revisao">🗺️ Trilha</button>
+        <button data-nav="review">🔄 Revisão</button>
+        <button data-nav="maps">🎁 Mapas</button>
+        <button data-nav="ach">🏆 Conquistas</button>
+        <button id="openSettings" aria-label="Configurações">⚙️</button>
+      </div>
+    </nav>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">terceirão · revisão inteligente</div>
+        <h1>Seu caminho até a <em>aprovação.</em></h1>
+        <p>Uma trilha gamificada para revisar Geografia e chegar nos vestibulares com mais segurança. A Prigeosc vai com você em cada etapa.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#revisao">Começar a trilha →</a>
+          <a class="btn btn-outline" href="#treinar-provas">Refazer provas reais</a>
+        </div>
+      </div>
+      <div class="mascot-col">
+        <div class="mascot-note">"Você não precisa saber tudo para chegar lá; precisa acreditar no que já construiu, continuar mesmo quando cansar e lembrar que cada página estudada hoje é um passo a mais em direção ao seu futuro. Seu esforço de hoje será parte da história que você vai contar amanhã.💙"</div>
+        <img class="mascot" src="prigeosc.png" alt="Prigeosc, mascote da trilha">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap stats">
+    <div class="stat"><strong>30</strong><span>blocos de revisão</span></div>
+    <div class="stat"><strong>5</strong><span>fases da missão de cada etapa</span></div>
+    <div class="stat"><strong>2026</strong><span>sua rota de estudos</span></div>
+  </div>
+
+  <section class="section" id="revisao">
+    <div class="wrap">
+      <div class="kicker">Etapa 1 · Geografia</div>
+      <h2>🗺️ Minha trilha</h2>
+      <p class="section-intro">Escolha uma etapa disponível, revise a ideia central e encare o desafio. Cada acerto conta — e cada erro também é revisão.</p>
+
+      <div class="trilha-top">
+        <div>
+          <div class="trilha-greet">Olá, vestibulando! 👋</div>
+          <div class="trilha-level" id="trilhaLevel">NÍVEL 1 · Explorador do Espaço</div>
+        </div>
+        <div class="trilha-badges">
+          <span class="trilha-badge">⭐ <span class="js-stat-xp">0</span> XP</span>
+          <span class="trilha-badge">🔥 <span class="js-stat-streak">0</span> dias</span>
+          <span class="trilha-badge">🏆 <span class="js-stat-done">0</span> etapas</span>
+          <button class="trilha-badge" id="openSettingsFromTrilha" style="cursor:pointer;border:1px solid var(--line)">⚙️ Conta</button>
+        </div>
+      </div>
+
+      <div class="trilha-progress-wrap">
+        <div class="trilha-progress-track"><div class="trilha-progress-fill" id="trilhaProgressFill" style="width:0%"></div></div>
+        <div class="trilha-progress-label" id="trilhaProgressLabel">0 / 30 etapas concluídas</div>
+      </div>
+
+      <div class="continue-card" id="continueCard"></div>
+      <div class="weak-box hidden" id="weakBox">
+        <div><b>🔁 Precisa revisar</b><p>Alguns temas pedem atenção extra.</p><span></span></div>
+        <button class="btn btn-outline" style="color:#9a6500;border-color:#e8c46b" data-nav="review">Revisar meus erros</button>
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-filter="all">Todos</button>
+        <button class="filter" data-filter="fisica">Geografia física</button>
+        <button class="filter" data-filter="economia">Economia &amp; trabalho</button>
+        <button class="filter" data-filter="geopolitica">Geopolítica</button>
+        <button class="filter" data-filter="brasil">Brasil</button>
+      </div>
+
+      <div class="game-map" id="gameMap"></div>
+      <button class="final-node" id="finalNode" disabled aria-label="Desafio final bloqueado">
+        <span class="node-icon">🏆</span>
+        <span class="node-title">Desafio final · bloqueado</span>
+      </button>
+      <div class="cameo-row"><img src="prigeosc.png" alt="Prigeosc" loading="lazy"><span>Bora revisar? Cada etapa concluída é um passo a mais rumo à aprovação!</span></div>
+    </div>
+  </section>
+
+  <section class="section practice-section" id="treinar-provas"><div class="wrap"><div class="kicker" style="color:#74e6f0">Bônus · mão na massa</div><h2>Refaça provas reais</h2><p class="section-intro">Treinar com tempo marcado e depois corrigir pelos gabaritos é uma das formas mais eficientes de medir sua evolução.</p><div class="practice-grid"><article class="practice-card"><h3>ENEM 2025</h3><p>Cadernos de questões e gabaritos oficiais da edição mais recente disponível.</p><a class="practice-link" href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank" rel="noopener">Abrir prova oficial ↗</a></article><article class="practice-card"><h3>UFSC 2026</h3><p>Provas 1 e 2, redação, questões discursivas e gabaritos definitivos do Vestibular Unificado.</p><a class="practice-link" href="https://vestibularunificado2026.ufsc.br/provas-e-gabaritos-definitivos/" target="_blank" rel="noopener">Abrir prova oficial ↗</a></article><article class="practice-card"><h3>UDESC 2026</h3><p>Cadernos e gabaritos do Vestibular de Inverno mais recente, no portal oficial da universidade.</p><a class="practice-link" href="https://www.udesc.br/vestibular/provas" target="_blank" rel="noopener">Abrir prova oficial ↗</a></article></div></div></section>
+</main>
+
+<dialog id="missionModal" aria-label="Missão de revisão">
+  <div id="missionBody"></div>
+</dialog>
+
+<dialog id="achModal">
+  <div class="modal-inner">
+    <button class="close" aria-label="Fechar conquistas">×</button>
+    <div class="modal-type">Suas conquistas</div>
+    <h2>🏅 Medalhas</h2>
+    <p>Continue revisando para desbloquear todas.</p>
+    <div class="ach-grid" id="achGrid"></div>
+  </div>
+</dialog>
+
+<dialog id="mapsModal">
+  <div class="modal-inner">
+    <button class="close" aria-label="Fechar meus mapas mentais">×</button>
+    <div class="modal-type">Sua coleção</div>
+    <h2>🎁 Meus mapas mentais</h2>
+    <p>Cada etapa concluída libera um ou mais mapas mentais para revisão rápida. Toque para ampliar ou baixar.</p>
+    <div class="maps-grid" id="mapsGrid"></div>
+  </div>
+</dialog>
+
+<dialog id="rewardLightbox">
+  <div class="modal-inner" style="padding:18px">
+    <button class="close" aria-label="Fechar mapa mental">×</button>
+    <div class="modal-type">Mapa mental</div>
+    <img id="lightboxImg" src="" alt="" style="width:100%;border-radius:14px;margin-top:10px;display:block;background:#eef3f6">
+    <a id="lightboxDownload" class="btn btn-primary" download style="margin-top:16px">⬇️ Baixar mapa mental</a>
+  </div>
+</dialog>
+
+<dialog id="settingsModal">
+  <div class="modal-inner">
+    <button class="close" aria-label="Fechar configurações">×</button>
+    <div class="modal-type">Configurações</div>
+    <h2>⚙️ Sua trilha</h2>
+
+    <div class="settings-row" style="flex-direction:column;align-items:stretch;gap:6px">
+      <p style="margin:0">💾 Seu progresso é salvo automaticamente neste navegador. Se trocar de aparelho ou limpar os dados do navegador, ele não acompanha — cada navegador guarda o seu próprio.</p>
+    </div>
+
+    <div class="settings-row">
+      <p>Isso apaga XP, estrelas, sequência e etapas concluídas neste navegador.</p>
+      <button class="m-btn m-btn-secondary" id="askReset">Reiniciar meu progresso</button>
+    </div>
+    <div class="confirm-reset" id="confirmReset">
+      <p>Tem certeza? Todo seu progresso será apagado.</p>
+      <div class="confirm-actions">
+        <button class="m-btn m-btn-secondary" id="cancelReset">CANCELAR</button>
+        <button class="m-btn m-btn-primary" id="doReset" style="background:#a5273a">SIM, REINICIAR</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<footer class="footer">
+  <div class="wrap">
+    <p><b>PRIGEOSC · TRILHA DO TERCEIRÃO</b></p>
+    <p>💙 **Este site foi feito com muito carinho, dedicação e esperança de que ele possa ajudar você nessa caminhada.** Cada conteúdo e recurso foi pensado para tornar seus estudos mais leves, organizados e significativos. Que este espaço seja mais uma ferramenta para lembrar que você não está sozinho nessa jornada. **Acredite no seu potencial, estude com confiança e vá em busca do seu sonho!** ✨📚</p>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Navegação principal">
+  <button data-nav="#top"><span class="bn-icon">🏠</span>Início</button>
+  <button data-nav="#revisao"><span class="bn-icon">🗺️</span>Trilha</button>
+  <button data-nav="review"><span class="bn-icon">🔄</span>Revisão</button>
+  <button data-nav="maps"><span class="bn-icon">🎁</span>Mapas</button>
+  <button data-nav="ach"><span class="bn-icon">🏆</span>Conquistas</button>
+  <button id="openSettingsMobile"><span class="bn-icon">⚙️</span>Conta</button>
+</nav>
+
+<script>
+/* ======================================================================
+   PRIGEOSC · TRILHA DO TERCEIRÃO — motor do jogo
+   Organização: DATA · STATE/STORAGE · QUESTIONS · UI RENDER · MISSION
+   FLOW · ACHIEVEMENTS · EXISTING SECTIONS (provas/efemérides) · INIT
+   ====================================================================== */
+
+/* ================= DATA (conteúdo original preservado) ================= */
+const topics=[
+['Cartografia e representação do espaço geográfico','Escalas, projeções, coordenadas e leitura crítica de mapas: aprenda como o espaço é representado e quais distorções cada escolha pode criar.','fisica'],['Agentes internos e estrutura geológica da Terra','Entenda camadas terrestres, tectonismo, vulcanismo e terremotos como forças que constroem o relevo.','fisica'],['Relevo brasileiro e agentes externos','Intemperismo, erosão e sedimentação moldam planaltos, planícies e depressões do Brasil.','fisica'],['Solos e hidrografia','Revise formação, conservação e usos do solo, bacias hidrográficas, aquíferos e gestão da água.','fisica'],['Clima','Elementos e fatores climáticos explicam a diversidade de climas, massas de ar e eventos extremos.','fisica'],['Paisagens climatobotânicas','Conecte clima, vegetação, biomas e impactos humanos na formação das paisagens.','fisica'],['Problemas ambientais','Mudanças climáticas, poluição, desmatamento e justiça ambiental: causas, impactos e soluções.','fisica'],['As revoluções industriais e os modelos de produção','Da fábrica fordista à automação e à indústria 4.0: tecnologia reorganiza trabalho, produção e território.','economia'],['A velha e a nova ordem mundial','Da bipolaridade da Guerra Fria à multipolaridade, revise os centros de poder do mundo contemporâneo.','geopolitica'],['Globalização e divisão internacional do trabalho','Fluxos globais conectam países, mas preservam desigualdades entre centros e periferias produtivas.','economia'],['Globalização e blocos econômicos','Blocos reduzem barreiras comerciais e refletem disputas por mercados, influência e integração regional.','economia'],['Os novos atores da dinâmica da economia global','China, Índia, empresas transnacionais e organismos internacionais mudam a distribuição do poder econômico.','economia'],['África: um continente em transformação','Diversidade física e cultural, urbanização, recursos e desafios pós-coloniais rompem visões estereotipadas.','geopolitica'],['O processo de industrialização do Brasil','Substituição de importações, concentração regional e desconcentração industrial explicam a indústria brasileira.','brasil'],['Produção agropecuária','Agronegócio, agricultura familiar, modernização e conflitos pela terra estruturam o campo brasileiro.','brasil'],['Urbanização mundial','Metrópoles, redes urbanas, segregação socioespacial e infraestrutura revelam os desafios das cidades.','geopolitica'],['Meios de transporte','Redes de transporte integram territórios, reduzem custos e evidenciam desigualdades de acesso.','economia'],['Recursos minerais','Mineração é estratégica para a economia, mas exige debate sobre dependência, impactos e segurança.','brasil'],['Fontes não renováveis de energia','Petróleo, carvão, gás e nuclear: matriz energética, geopolítica e os custos ambientais dos combustíveis fósseis.','economia'],['Fontes renováveis de energia','Solar, eólica, hídrica e biomassa são centrais na transição energética e têm limites territoriais.','economia'],['Geografia da população','Crescimento, estrutura etária, indicadores e distribuição populacional ajudam a ler desigualdades.','geopolitica'],['Indicadores socioeconômicos','IDH, PIB, Gini e outros índices medem desenvolvimento, mas precisam de interpretação crítica.','geopolitica'],['Fluxos migratórios','Migrações voluntárias e forçadas respondem a trabalho, guerras, crises climáticas e redes sociais.','geopolitica'],['Separatismos e tensões regionais','Fronteiras, identidades nacionais e disputas por autonomia explicam conflitos em diferentes regiões.','geopolitica'],['Oriente Médio: espaço geográfico em ebulição','Petróleo, água, religiões, fronteiras e interesses externos tornam a região estratégica e complexa.','geopolitica'],['O conflito entre Israel e Palestina','Território, nacionalismos, refugiados e direito internacional são chaves para compreender o conflito.','geopolitica'],['América contemporânea','Integração, assimetrias e dinâmicas políticas ajudam a comparar América Latina, EUA e Canadá.','geopolitica'],['Conceitos regionais e formação do território brasileiro','Território, região, rede e fronteira ajudam a entender a formação histórica do espaço brasileiro.','brasil'],['Regionalização do Brasil: divisão territorial','IBGE e outros critérios regionalizam o país conforme elementos naturais, sociais e econômicos.','brasil'],['Regionalização do Brasil: crescimento e desenvolvimento econômico','Compare desigualdades regionais, concentração de renda, infraestrutura e políticas de desenvolvimento.','brasil']];
+const topicStudy=[
+[['Escala: relação entre medida no mapa e realidade.','Projeção: técnica que sempre gera alguma distorção.','Coordenadas: latitude e longitude localizam pontos.'],'Compare projeções, calcule escalas e interprete mapas temáticos; a prova costuma cobrar a adequação da representação a cada fenômeno.'],
+[['Litosfera: camada rígida dividida em placas.','Tectonismo: movimento das placas que deforma a crosta.','Vulcanismo e sismos: manifestações da energia interna.'],'Relacione limites de placas à ocorrência de terremotos e vulcões; diferencie processos internos dos agentes que desgastam o relevo.'],
+[['Intemperismo: desagregação física e química das rochas.','Erosão: remoção de materiais por água, vento ou gelo.','Relevo: resultado contínuo de estrutura geológica e modelagem externa.'],'Identifique em imagens ou perfis de relevo a ação de rios, chuva e vento; associe ocupação inadequada à intensificação da erosão.'],
+[['Solo: camada superficial formada lentamente a partir da rocha.','Bacia hidrográfica: área drenada por um rio principal e afluentes.','Aquífero: reserva de água subterrânea nos poros das rochas.'],'Analise problemas como erosão, assoreamento e contaminação; leia mapas de bacias e proponha formas de gestão da água.'],
+[['Tempo: condição atmosférica de curto prazo.','Clima: padrão observado durante longos períodos.','Massas de ar: grandes porções de ar com temperatura e umidade próprias.'],'Diferencie tempo de clima e associe massas de ar a chuvas, frentes frias e secas; gráficos climáticos são muito frequentes.'],
+[['Bioma: conjunto de ecossistemas com clima e vegetação predominantes.','Domínio morfoclimático: integração entre relevo, solo, clima e vegetação.','Ecótono: faixa de transição entre formações vegetais.'],'Associe mapas de biomas aos fatores climáticos e às ações humanas; compare adaptações da vegetação em ambientes distintos.'],
+[['Efeito estufa: processo natural intensificado por emissões humanas.','Desmatamento: remoção de cobertura vegetal com impactos múltiplos.','Justiça ambiental: distribuição desigual de riscos e danos ambientais.'],'Interprete dados de emissões, queimadas ou poluição e relacione impactos ambientais a desigualdade, consumo e políticas públicas.'],
+[['Fordismo: produção em massa, padronizada e em linha de montagem.','Toyotismo: produção flexível, enxuta e just-in-time.','Indústria 4.0: integração de automação, dados e inteligência artificial.'],'Compare modelos produtivos e seus efeitos sobre emprego, espaço industrial e qualificação profissional; conecte a plataformas digitais.'],
+[['Ordem bipolar: disputa EUA × URSS na Guerra Fria.','Multipolaridade: vários polos de poder e influência.','Geopolítica: análise das relações de poder no território.'],'Localize alianças e áreas de influência em mapas históricos; explique como a queda da URSS reorganizou conflitos e blocos.'],
+[['Globalização: integração acelerada por tecnologia e fluxos.','DIT: especialização desigual dos países na produção.','Multinacional: empresa com operações em diversos territórios.'],'Leia fluxos comerciais e cadeias produtivas; explique por que a integração global não elimina a dependência entre países.'],
+[['Bloco econômico: acordo para facilitar relações entre países.','Zona de livre comércio: reduz tarifas entre membros.','Mercado comum: amplia integração com circulação de fatores.'],'Compare UE, Mercosul e USMCA; identifique o nível de integração e seus impactos sobre tarifas, migração e soberania.'],
+[['BRICS: articulação de economias emergentes.','Big techs: empresas que concentram dados e poder digital.','Organismos multilaterais: instituições de coordenação internacional.'],'Analise notícias sobre China, plataformas e instituições internacionais, observando como atores não estatais influenciam a economia.'],
+[['Colonialismo: dominação europeia que marcou fronteiras e economias.','África subsaariana: região ao sul do Saara, muito diversa.','Urbanização: crescimento das cidades e de suas redes.'],'Evite generalizações: compare regiões africanas, recursos, indicadores e processos pós-coloniais em mapas e gráficos.'],
+[['Substituição de importações: produção interna para reduzir dependência externa.','Concentração industrial: predomínio histórico no Sudeste.','Desconcentração: expansão industrial para outras regiões.'],'Relacione fases da industrialização a infraestrutura, mercado consumidor e incentivos; interprete mapas de distribuição industrial.'],
+[['Agronegócio: produção integrada a cadeias, crédito e exportação.','Agricultura familiar: produção de menor escala com forte papel alimentar.','Estrutura fundiária: distribuição da propriedade da terra.'],'Compare sistemas produtivos e avalie impactos de mecanização, commodities, uso de agrotóxicos e conflitos no campo.'],
+[['Metrópole: cidade que comanda fluxos e redes urbanas.','Conurbação: união física de manchas urbanas próximas.','Segregação: separação desigual de grupos e serviços no espaço urbano.'],'Interprete mapas de mobilidade e indicadores urbanos; relacione periferização, moradia, saneamento e desigualdade.'],
+[['Modal: meio de transporte como rodoviário, ferroviário ou hidroviário.','Intermodalidade: uso articulado de mais de um modal.','Logística: organização dos fluxos de mercadorias e pessoas.'],'Compare custos, velocidade e impactos de cada modal; explique a predominância rodoviária brasileira e seus limites.'],
+[['Minério: recurso natural não renovável extraído da crosta.','Commodities: bens primários cotados no mercado global.','Barragem de rejeitos: estrutura que demanda controle e segurança.'],'Analise mapas de áreas mineradoras e exportações; discuta dependência de commodities e consequências socioambientais.'],
+[['Combustível fóssil: fonte formada em milhões de anos, como petróleo e carvão.','Matriz energética: conjunto de fontes usadas por uma sociedade.','Transição energética: mudança para fontes menos emissoras.'],'Relacione combustíveis fósseis a emissões e geopolítica do petróleo; compare a matriz brasileira à mundial.'],
+[['Energia solar: obtida da radiação solar.','Energia eólica: produzida pelo movimento do vento.','Biomassa: energia de matéria orgânica.'],'Compare vantagens, limites e localização das renováveis; observe intermitência, impactos locais e complementaridade da matriz.'],
+[['Transição demográfica: passagem de altas para baixas taxas de natalidade e mortalidade.','Pirâmide etária: gráfico da estrutura por idade e sexo.','Densidade demográfica: habitantes por área.'],'Leia pirâmides e mapas populacionais; explique envelhecimento, bônus demográfico e concentração de população.'],
+[['PIB: valor dos bens e serviços produzidos.','IDH: indicador que combina renda, educação e longevidade.','Índice de Gini: medida de concentração de renda.'],'Não confunda crescimento com desenvolvimento: compare indicadores e identifique limites de médias nacionais.'],
+[['Migração: deslocamento de pessoas com mudança de residência.','Refugiado: pessoa forçada a sair por perseguição ou conflito.','Êxodo rural: saída do campo para cidades.'],'Diferencie causas econômicas, políticas e climáticas; interprete rotas migratórias e os desafios de acolhimento.'],
+[['Separatismo: movimento pela autonomia ou independência.','Nação: comunidade ligada por identidades e referências comuns.','Estado: organização política soberana sobre um território.'],'Associe conflitos a fronteiras históricas, identidades e recursos; diferencie autonomia regional, separatismo e disputa territorial.'],
+[['Geoestratégia: valor de um território para o poder internacional.','Petróleo: recurso central nas economias e disputas regionais.','Escassez hídrica: limitação de água em áreas áridas.'],'Localize estreitos, rotas e áreas produtoras; explique como recursos, religião e fronteiras coloniais se combinam nos conflitos.'],
+[['Sionismo: movimento nacional judaico ligado à criação de Israel.','Territórios palestinos: Cisjordânia e Faixa de Gaza.','Refugiados: população deslocada por guerras e expulsões.'],'Reconheça a dimensão histórica e territorial do conflito; leia mapas de ocupação e relacione direito internacional e crise humanitária.'],
+[['América Anglo-Saxônica: EUA e Canadá, de alto peso econômico.','América Latina: região diversa, marcada por colonização ibérica.','Integração regional: cooperação econômica e política entre países.'],'Compare indicadores, acordos e posições geopolíticas; evite tratar o continente como um bloco homogêneo.'],
+[['Território: espaço apropriado por relações de poder.','Região: recorte com características selecionadas.','Rede: conexões entre lugares por fluxos materiais e imateriais.'],'Aplique os conceitos para interpretar mapas do Brasil e explicar como infraestrutura e poder organizam o espaço nacional.'],
+[['Regionalização: divisão do espaço por critérios definidos.','Macrorregiões do IBGE: Norte, Nordeste, Centro-Oeste, Sudeste e Sul.','Complexos regionais: recorte baseado em formação socioeconômica.'],'Compare diferentes regionalizações e identifique o critério usado em cada mapa; não memorize apenas nomes e limites.'],
+[['Desenvolvimento regional: melhoria de renda, serviços e oportunidades.','Desigualdade regional: diferenças históricas entre áreas do país.','Política regional: ação pública para reduzir disparidades.'],'Interprete indicadores por região e relacione concentração econômica, infraestrutura e políticas de incentivo aos desequilíbrios territoriais.']];
+const labels={all:'Todos',fisica:'Geografia física',economia:'Economia & trabalho',geopolitica:'Geopolítica',brasil:'Brasil'};
+
+/* Mapas mentais de recompensa por etapa (0-indexado). Algumas etapas têm mais
+   de um mapa — basta adicionar mais entradas no array daquele índice.
+   Os caminhos NÃO levam extensão: o jogo tenta .jpg, depois .png, depois
+   .jpeg e .webp automaticamente, então tanto faz o arquivo ser jpg ou png,
+   contanto que o nome (sem extensão) bata com o que está aqui. */
+const topicRewards={
+  0:['mapas/mapa-01-a','mapas/mapa-01-b'],
+  1:['mapas/mapa-02-a','mapas/mapa-02-b','mapas/mapa-02-c','mapas/mapa-02-d'],
+  2:['mapas/mapa-03-a','mapas/mapa-03-b'],
+  3:['mapas/mapa-04-a','mapas/mapa-04-b','mapas/mapa-04-c'],
+  4:['mapas/mapa-05-a','mapas/mapa-05-b','mapas/mapa-05-c','mapas/mapa-05-d'],
+  5:['mapas/mapa-06-a','mapas/mapa-06-b'],
+  6:['mapas/mapa-07-a','mapas/mapa-07-b'],
+  7:['mapas/mapa-08-a','mapas/mapa-08-b','mapas/mapa-08-c','mapas/mapa-08-d','mapas/mapa-08-e','mapas/mapa-08-f','mapas/mapa-08-g'],
+  8:['mapas/mapa-09-a','mapas/mapa-09-b'],
+  9:['mapas/mapa-10-a'],
+  10:['mapas/mapa-11-a','mapas/mapa-11-b'],
+  11:['mapas/mapa-12-a','mapas/mapa-12-b','mapas/mapa-12-c','mapas/mapa-12-d'],
+  12:['mapas/mapa-13-a','mapas/mapa-13-b'],
+  13:['mapas/mapa-14-a'],
+  14:['mapas/mapa-15-a'],
+  15:['mapas/mapa-16-a'],
+  16:['mapas/mapa-17-a'],
+  17:['mapas/mapa-18-a'],
+  18:['mapas/mapa-19-a','mapas/mapa-19-b'],
+  19:['mapas/mapa-20-a'],
+  20:['mapas/mapa-21-a'],
+  21:['mapas/mapa-22-a'],
+  22:['mapas/mapa-23-a'],
+  23:['mapas/mapa-24-a'],
+  24:['mapas/mapa-25-a','mapas/mapa-25-b','mapas/mapa-25-c'],
+  25:['mapas/mapa-26-a','mapas/mapa-26-b','mapas/mapa-26-c'],
+  26:['mapas/mapa-27-a','mapas/mapa-27-b','mapas/mapa-27-c'],
+  27:['mapas/mapa-28-a','mapas/mapa-28-b'],
+  28:['mapas/mapa-29-a'],
+  29:['mapas/mapa-30-a','mapas/mapa-30-b'],
+};
+function rewardsFor(topicId){return topicRewards[topicId]||[];}
+const REWARD_EXTS=['jpg','png','jpeg','webp'];
+function fallbackRewardImg(){return "data:image/svg+xml;utf8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="300" height="220"><rect width="300" height="220" fill="#eef3f6"/><text x="50%" y="48%" text-anchor="middle" font-family="Arial" font-size="15" fill="#7c92a0">🎁 mapa em breve</text><text x="50%" y="64%" text-anchor="middle" font-family="Arial" font-size="11" fill="#9fb0bd">adicione o arquivo na pasta /mapas</text></svg>');}
+/* Tenta carregar basePath+'.jpg', depois .png, .jpeg, .webp; se nada existir, usa o placeholder. */
+function loadRewardImage(imgEl,basePath){
+  let i=0;
+  function tryNext(){
+    if(i>=REWARD_EXTS.length){imgEl.onerror=null;imgEl.src=fallbackRewardImg();return;}
+    imgEl.src=basePath+'.'+REWARD_EXTS[i];
+    i++;
+  }
+  imgEl.onerror=tryNext;
+  tryNext();
+}
+
+const gameTopics=topics.map((t,i)=>({id:i,title:t[0],description:t[1],category:t[2],concepts:topicStudy[i][0],examTip:topicStudy[i][1]}));
+
+let topicFilter='all';
+
+/* ================= STATE / STORAGE ================= */
+const STORAGE_KEY='prigeosc_trilha_state_v1';
+function defaultState(){
+  return {xp:0,streak:0,lastStudyDate:null,completedTopics:[],topicProgress:{},topicStars:{},topicScores:{},weakTopics:[],achievements:[],finalChallengeUnlocked:false,finalChallengeCompleted:false};
+}
+let gameState=loadGame();
+function loadGame(){
+  try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return defaultState();const s=JSON.parse(raw);return Object.assign(defaultState(),s);}
+  catch(e){return defaultState();}
+}
+function saveGame(){
+  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(gameState));}catch(e){}
+}
+function resetGame(){
+  gameState=defaultState();
+  saveGame();
+  renderAll();
+  document.querySelector('#settingsModal').close();
+}
+
+const LEVELS=[{name:'Explorador do Espaço',min:0},{name:'Leitor do Território',min:150},{name:'Analista Geográfico',min:400},{name:'Estrategista',min:800},{name:'Mestre da Geografia',min:1500}];
+function getLevel(xp){let lvl=LEVELS[0],idx=1;for(let i=0;i<LEVELS.length;i++){if(xp>=LEVELS[i].min){lvl=LEVELS[i];idx=i+1;}}return {index:idx,name:lvl.name};}
+
+function addXP(n){gameState.xp+=n;saveGame();}
+
+function todayStr(){const d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
+function updateStreak(){
+  const today=todayStr();
+  if(gameState.lastStudyDate===today)return;
+  const y=new Date();y.setDate(y.getDate()-1);
+  const yesterday=y.getFullYear()+'-'+(y.getMonth()+1)+'-'+y.getDate();
+  if(gameState.lastStudyDate===yesterday){gameState.streak+=1;}
+  else{gameState.streak=1;}
+  gameState.lastStudyDate=today;
+  saveGame();
+}
+
+function starsFor(pct){if(pct>=100)return 3;if(pct>=80)return 2;if(pct>=60)return 1;return 0;}
+
+function topicStatus(id){
+  if(gameState.completedTopics.includes(id))return 'done';
+  const prog=gameState.topicProgress[id];
+  if(prog&&prog.started)return 'progress';
+  if(id===0)return 'available';
+  if(gameState.completedTopics.includes(id-1))return 'available';
+  return 'locked';
+}
+function statusLabel(s){return s==='locked'?'bloqueada':s==='progress'?'em andamento':s==='done'?'concluída':'disponível';}
+
+function completeTopic(id,correct,total){
+  const pct=Math.round(correct/total*100);
+  const stars=starsFor(pct);
+  if(!gameState.completedTopics.includes(id) && pct>=60){gameState.completedTopics.push(id);}
+  gameState.topicScores[id]=Math.max(pct,gameState.topicScores[id]||0);
+  gameState.topicStars[id]=Math.max(stars,gameState.topicStars[id]||0);
+  gameState.topicProgress[id]={started:true,completed:pct>=60};
+  const xpGain=(pct>=60?50:correct*10)+(stars===3?100:0);
+  addXP(xpGain);
+  updateStreak();
+  if(gameState.completedTopics.length>=gameTopics.length)gameState.finalChallengeUnlocked=true;
+  saveGame();
+  const newAch=checkAchievements();
+  return {pct,stars,xpGain,newAch};
+}
+
+/* ================= ACHIEVEMENTS ================= */
+const ACHIEVEMENTS=[
+ {id:'first',icon:'🏅',name:'Primeiro passo',desc:'Conclua a primeira fase.',check:s=>s.completedTopics.length>=1},
+ {id:'cart3',icon:'🏅',name:'Cartógrafo',desc:'Conclua 3 fases.',check:s=>s.completedTopics.length>=3},
+ {id:'exp10',icon:'🏅',name:'Explorador',desc:'Conclua 10 fases.',check:s=>s.completedTopics.length>=10},
+ {id:'geo20',icon:'🏅',name:'Geógrafo',desc:'Conclua 20 fases.',check:s=>s.completedTopics.length>=20},
+ {id:'master30',icon:'🏆',name:'Mestre da Trilha',desc:'Conclua as 30 fases.',check:s=>s.completedTopics.length>=30},
+ {id:'streak7',icon:'🔥',name:'7 dias',desc:'Mantenha uma sequência de 7 dias.',check:s=>s.streak>=7},
+ {id:'perfect5',icon:'⭐',name:'Perfeccionista',desc:'Consiga 3 estrelas em 5 fases.',check:s=>Object.values(s.topicStars).filter(v=>v===3).length>=5},
+];
+function checkAchievements(){
+  const newly=[];
+  ACHIEVEMENTS.forEach(a=>{if(!gameState.achievements.includes(a.id)&&a.check(gameState)){gameState.achievements.push(a.id);newly.push(a);}});
+  if(newly.length)saveGame();
+  return newly;
+}
+function renderAchievements(){
+  document.querySelector('#achGrid').innerHTML=ACHIEVEMENTS.map(a=>{
+    const unlocked=gameState.achievements.includes(a.id);
+    return `<div class="ach-item ${unlocked?'':'locked'}"><span class="ach-icon">${a.icon}</span><div><b>${a.name}</b><span>${a.desc}</span></div></div>`;
+  }).join('');
+}
+
+/* ================= UTIL ================= */
+function shuffle(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function conceptName(str){return str.split(':')[0].trim();}
+function conceptDef(str){return str.split(':').slice(1).join(':').trim();}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+/* ================= QUESTION GENERATION (derivada apenas do conteúdo existente) ================= */
+function generateQuestions(topicIndex){
+  const t=gameTopics[topicIndex];
+  const concepts=t.concepts;
+  const qs=[];
+  concepts.forEach((c,ci)=>{
+    const name=conceptName(c), def=conceptDef(c);
+    let distractors=concepts.filter((_,idx)=>idx!==ci).map(conceptName);
+    const otherTopic=gameTopics[(topicIndex+7+ci)%gameTopics.length];
+    if(otherTopic.id!==topicIndex)distractors.push(conceptName(otherTopic.concepts[0]));
+    distractors=shuffle(distractors).slice(0,3);
+    const options=shuffle([name,...distractors]);
+    qs.push({type:'mc',prompt:`Qual conceito corresponde a esta definição?<br><i>“${esc(def)}”</i>`,options,correct:name,explanation:`${name}: ${def}`});
+  });
+  const cA=concepts[0], cB=concepts[1];
+  const nameA=conceptName(cA), defA=conceptDef(cA), defB=conceptDef(cB);
+  const truePairing=Math.random()<0.5;
+  qs.push({type:'tf',prompt:`“${esc(nameA)}: ${esc(truePairing?defA:defB)}” — verdadeiro ou falso?`,correct:truePairing?'V':'F',explanation:`${nameA}: ${defA}`});
+  const otherTopics=gameTopics.filter(x=>x.id!==topicIndex);
+  const wrongDescs=shuffle(otherTopics).slice(0,3).map(x=>x.description);
+  const options2=shuffle([t.description,...wrongDescs]);
+  qs.push({type:'mc',prompt:'Qual alternativa resume melhor o conteúdo desta etapa?',options:options2,correct:t.description,explanation:t.description});
+  return shuffle(qs);
+}
+function generateFinalQuestions(){
+  const chosen=shuffle([...Array(gameTopics.length).keys()]).slice(0,10);
+  return chosen.map(idx=>{const qs=generateQuestions(idx);const q=qs[Math.floor(Math.random()*qs.length)];q.topicId=idx;return q;});
+}
+function generateReviewQuestions(){
+  const ids=shuffle([...new Set(gameState.weakTopics)]).slice(0,6);
+  if(!ids.length)return [];
+  return ids.map(idx=>{const qs=generateQuestions(idx);const q=qs[Math.floor(Math.random()*qs.length)];q.topicId=idx;return q;});
+}
+
+/* ================= TRILHA / MAP RENDER ================= */
+function currentNodeId(){
+  let t=gameTopics.find(t=>topicStatus(t.id)==='progress');
+  if(!t)t=gameTopics.find(t=>topicStatus(t.id)==='available' && !gameState.completedTopics.includes(t.id));
+  return t?t.id:null;
+}
+
+function renderTrilhaHeader(){
+  const total=gameTopics.length, completed=gameState.completedTopics.length;
+  const pct=Math.round(completed/total*100);
+  const lvl=getLevel(gameState.xp);
+  document.querySelectorAll('.js-stat-xp').forEach(el=>el.textContent=gameState.xp.toLocaleString('pt-BR'));
+  document.querySelectorAll('.js-stat-streak').forEach(el=>el.textContent=gameState.streak);
+  document.querySelectorAll('.js-stat-done').forEach(el=>el.textContent=completed);
+  document.querySelector('#trilhaLevel').textContent=`NÍVEL ${lvl.index} · ${lvl.name}`;
+  document.querySelector('#trilhaProgressFill').style.width=pct+'%';
+  document.querySelector('#trilhaProgressLabel').textContent=`${completed} / ${total} etapas concluídas`;
+
+  const weakCount=new Set(gameState.weakTopics).size;
+  const weakBox=document.querySelector('#weakBox');
+  if(weakCount>0){
+    weakBox.classList.remove('hidden');
+    weakBox.querySelector('span').textContent=`${weakCount} ${weakCount===1?'tema pede':'temas pedem'} uma nova revisão.`;
+  }else{weakBox.classList.add('hidden');}
+
+  const continueEl=document.querySelector('#continueCard');
+  const targetId=currentNodeId();
+  const target=targetId!==null?gameTopics[targetId]:null;
+  if(completed>=total){
+    continueEl.innerHTML=`<div><div class="continue-label">🏆 Trilha completa</div><h3>Você concluiu os 30 blocos!</h3><p>${gameState.finalChallengeCompleted?'Você já venceu o Desafio Final. Pode revisar quando quiser.':'Encare agora o Desafio Final para fechar sua jornada.'}</p></div><button class="btn btn-primary" id="continueBtn">${gameState.finalChallengeCompleted?'Revisar trilha →':'Desafio final →'}</button>`;
+    document.querySelector('#continueBtn').onclick=()=>gameState.finalChallengeCompleted?document.querySelector('#gameMap').scrollIntoView({behavior:'smooth'}):openFinalChallenge();
+  }else if(target){
+    const prog=Math.round((gameState.topicScores[target.id]||0));
+    continueEl.innerHTML=`<div><div class="continue-label">👋 Continue de onde parou</div><h3>Etapa ${String(target.id+1).padStart(2,'0')} · ${esc(target.title)}</h3><p>${esc(target.description)}</p><div class="continue-progress"><span style="width:${prog}%"></span></div></div><button class="btn btn-primary" id="continueBtn">Continuar →</button>`;
+    document.querySelector('#continueBtn').onclick=()=>openMission(target.id);
+  }else{
+    continueEl.innerHTML=`<div><div class="continue-label">🚀 Sua jornada começa aqui</div><h3>Comece pela Etapa 01</h3><p>Cartografia e representação do espaço geográfico.</p></div><button class="btn btn-primary" id="continueBtn">Começar</button>`;
+    document.querySelector('#continueBtn').onclick=()=>openMission(0);
+  }
+}
+
+function renderGameMap(){
+  const list=gameTopics.filter(t=>topicFilter==='all'||t.category===topicFilter);
+  const current=currentNodeId();
+  const html=list.map((t,i)=>{
+    const status=topicStatus(t.id);
+    const stars=gameState.topicStars[t.id]||0;
+    const icon=status==='locked'?'🔒':status==='progress'?'🟡':status==='done'?(stars===3?'🏆':'✅'):'🟢';
+    const starsHtml=status==='done'?`<span class="node-stars">${'★'.repeat(stars)}${'☆'.repeat(3-stars)}</span>`:'';
+    const giftHtml=(status==='done'&&rewardsFor(t.id).length)?`<span class="node-gift" title="Mapa mental desbloqueado">🎁</span>`:'';
+    const isHere=t.id===current;
+    const sideClass=isHere?(i%2===0?'node-here-r':'node-here-l'):'';
+    const hereHtml=isHere?`<span class="node-here" aria-hidden="true"><img src="prigeosc.png" alt=""><b>você está aqui</b></span>`:'';
+    return `<button class="node node-${status} ${isHere?'node-is-here '+sideClass:''}" data-node="${t.id}" ${status==='locked'?'disabled':''} aria-label="Etapa ${t.id+1}: ${esc(t.title)} — ${statusLabel(status)}${isHere?' — você está aqui':''}">${hereHtml}<span class="node-icon">${icon}</span><span class="node-num">ETAPA ${String(t.id+1).padStart(2,'0')}</span><span class="node-title">${esc(t.title)}</span>${starsHtml}${giftHtml}</button>`;
+  }).join('');
+  document.querySelector('#gameMap').innerHTML=html||'<p class="map-empty">Nenhuma etapa nesta categoria.</p>';
+  document.querySelectorAll('[data-node]').forEach(b=>b.onclick=()=>openMission(Number(b.dataset.node)));
+
+  const finalBtn=document.querySelector('#finalNode');
+  const unlocked=gameState.finalChallengeUnlocked;
+  finalBtn.disabled=!unlocked;
+  finalBtn.setAttribute('aria-label',unlocked?'Desafio final desbloqueado':'Desafio final bloqueado — conclua as 30 etapas');
+  finalBtn.querySelector('.node-title').textContent=unlocked?(gameState.finalChallengeCompleted?'Desafio final · concluído':'Desafio final · disponível'):'Desafio final · bloqueado';
+  finalBtn.onclick=unlocked?openFinalChallenge:null;
+}
+
+function renderAll(){
+  renderTrilhaHeader();
+  renderGameMap();
+  renderAchievements();
+}
+
+/* ================= MISSION FLOW (dialog #missionModal) ================= */
+let mission=null; // {mode:'topic'|'final'|'review', topicId, hearts, current, questions, correctCount, weakThisRun}
+
+function missionHeader(title,hearts){
+  return `<div class="m-head"><button class="m-back" id="mBack" aria-label="Voltar">←</button><div class="m-etapa">${esc(title)}</div><div class="m-hearts" aria-label="${hearts} vidas restantes">${'❤️'.repeat(hearts)}${'🤍'.repeat(Math.max(0,5-hearts))}</div></div>`;
+}
+function attachBack(){const b=document.querySelector('#mBack');if(b)b.onclick=closeMission;}
+function closeMission(){document.querySelector('#missionModal').close();mission=null;renderAll();}
+
+function openMission(id){
+  if(topicStatus(id)==='locked')return;
+  if(!gameState.topicProgress[id])gameState.topicProgress[id]={started:false,completed:false};
+  mission={mode:'topic',topicId:id};
+  renderMissionIntro(id);
+  document.querySelector('#missionModal').showModal();
+}
+function renderMissionIntro(id){
+  const t=gameTopics[id];
+  const pct=gameState.topicScores[id]||0;
+  const body=document.querySelector('#missionBody');
+  body.innerHTML=`${missionHeader('ETAPA '+String(id+1).padStart(2,'0'),5)}<div class="m-body">
+    <div class="m-etapa">${esc(labels[t.category])}</div>
+    <div class="m-title">${esc(t.title)}</div>
+    <div class="m-progress-track"><div class="m-progress-fill" style="width:${pct}%"></div></div>
+    <div class="m-section-label">🧠 Revisão</div>
+    <p style="color:#5a7180;line-height:1.6;font-size:14.5px">${esc(t.description)}</p>
+    <div class="m-mascot-line"><span>🧑‍🏫</span><div><b>Prigeosc:</b> vamos revisar ${esc(t.title.toLowerCase())}?</div></div>
+    <button class="m-confirm" id="mStart">COMEÇAR REVISÃO</button>
+  </div>`;
+  attachBack();
+  document.querySelector('#mStart').onclick=()=>renderMissionStudy(id);
+}
+function renderMissionStudy(id){
+  const t=gameTopics[id];
+  gameState.topicProgress[id]={started:true,completed:gameState.topicProgress[id]?.completed||false};
+  saveGame();
+  const body=document.querySelector('#missionBody');
+  body.innerHTML=`${missionHeader('ETAPA '+String(id+1).padStart(2,'0'),5)}<div class="m-body">
+    <div class="m-title" style="font-size:20px">${esc(t.title)}</div>
+    <div class="m-section-label">🧠 Conceitos-chave</div>
+    ${t.concepts.map(c=>`<div class="m-concept"><b>${esc(conceptName(c))}</b><span>${esc(conceptDef(c))}</span></div>`).join('')}
+    <div class="m-section-label">📌 Como pode cair</div>
+    <div class="m-examtip">${esc(t.examTip)}</div>
+    <button class="m-confirm" id="mContinue">CONTINUAR</button>
+  </div>`;
+  attachBack();
+  document.querySelector('#mContinue').onclick=()=>startQuiz(id);
+}
+function startQuiz(id){
+  mission={mode:'topic',topicId:id,hearts:5,current:0,correctCount:0,questions:generateQuestions(id),weakThisRun:new Set()};
+  renderQuestion();
+}
+function openFinalChallenge(){
+  if(!gameState.finalChallengeUnlocked)return;
+  mission={mode:'final',hearts:5,current:0,correctCount:0,questions:generateFinalQuestions(),weakThisRun:new Set()};
+  document.querySelector('#missionModal').showModal();
+  renderQuestion();
+}
+function openReview(){
+  const qs=generateReviewQuestions();
+  if(!qs.length){alert('Você ainda não tem temas para revisar. Continue estudando pela trilha!');return;}
+  mission={mode:'review',hearts:5,current:0,correctCount:0,questions:qs,weakThisRun:new Set()};
+  document.querySelector('#missionModal').showModal();
+  renderQuestion();
+}
+function missionTitle(){
+  if(mission.mode==='final')return '🏆 Desafio final';
+  if(mission.mode==='review')return '🔁 Revisão de erros';
+  return 'ETAPA '+String(mission.topicId+1).padStart(2,'0');
+}
+function renderQuestion(){
+  const m=mission, q=m.questions[m.current];
+  const body=document.querySelector('#missionBody');
+  const pct=Math.round((m.current)/m.questions.length*100);
+  let optionsHtml;
+  if(q.type==='tf'){
+    optionsHtml=`<div class="m-tf-row"><button class="m-option" data-val="V">VERDADEIRO</button><button class="m-option" data-val="F">FALSO</button></div>`;
+  }else{
+    optionsHtml=`<div class="m-options">${q.options.map(o=>`<button class="m-option" data-val="${esc(o)}">${esc(o)}</button>`).join('')}</div>`;
+  }
+  body.innerHTML=`${missionHeader(missionTitle(),m.hearts)}<div class="m-body">
+    <div class="m-progress-track"><div class="m-progress-fill" style="width:${pct}%"></div></div>
+    <div class="m-qcount">Pergunta ${m.current+1} de ${m.questions.length}</div>
+    <div class="m-question">${q.prompt}</div>
+    ${optionsHtml}
+    <button class="m-confirm" id="mConfirm" disabled>CONFIRMAR</button>
+  </div>`;
+  attachBack();
+  let selected=null;
+  document.querySelectorAll('.m-option').forEach(btn=>{
+    btn.onclick=()=>{
+      document.querySelectorAll('.m-option').forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selected=btn.dataset.val;
+      document.querySelector('#mConfirm').disabled=false;
+    };
+  });
+  document.querySelector('#mConfirm').onclick=()=>answerQuestion(selected);
+}
+function answerQuestion(selected){
+  const m=mission, q=m.questions[m.current];
+  const isCorrect=selected===q.correct;
+  document.querySelectorAll('.m-option').forEach(b=>{
+    if(b.dataset.val===q.correct)b.classList.add('correct');
+    else if(b.dataset.val===selected)b.classList.add('wrong');
+  });
+  document.querySelector('#mConfirm').remove();
+  const qTopicId=q.topicId!==undefined?q.topicId:m.topicId;
+  if(isCorrect){
+    m.correctCount++;
+    addXP(10);
+    if(m.mode==='review'&&qTopicId!==undefined)(m.reviewedCorrect=m.reviewedCorrect||new Set()).add(qTopicId);
+  }else{
+    m.hearts--;
+    if(qTopicId!==undefined)gameState.weakTopics.push(qTopicId);
+    saveGame();
+  }
+  const feedback=document.createElement('div');
+  feedback.className='m-feedback '+(isCorrect?'ok':'bad');
+  feedback.innerHTML=`<h4>${isCorrect?'✓ Muito bem!':'✕ Quase!'}</h4><p>${isCorrect?'Você entendeu o conceito.':'Revise: '+esc(q.explanation)}</p>${isCorrect?'<span class="m-xp-pill">+10 XP</span>':''}<button class="m-confirm" id="mNext" style="margin-top:16px">CONTINUAR</button>`;
+  document.querySelector('.m-body').appendChild(feedback);
+  document.querySelector('#mNext').onclick=()=>{
+    if(m.hearts<=0){renderFail();return;}
+    m.current++;
+    if(m.current>=m.questions.length){finishMission();}
+    else{renderQuestion();}
+  };
+}
+function renderFail(){
+  const m=mission;
+  const body=document.querySelector('#missionBody');
+  body.innerHTML=`${missionHeader(missionTitle(),0)}<div class="m-body m-fail">
+    <div class="m-icon">💙</div>
+    <h2>VOCÊ ESTÁ APRENDENDO!</h2>
+    <p>Essa etapa precisa de mais uma revisão. Errar também faz parte do processo — não precisa acertar tudo de primeira.</p>
+    <div class="m-fail-actions">
+      ${m.mode==='topic'?`<button class="m-btn m-btn-primary" id="mRestudy">REVISAR NOVAMENTE</button>`:''}
+      <button class="m-btn m-btn-secondary" id="mRetry">TENTAR DE NOVO</button>
+      <button class="m-btn m-btn-secondary" id="mBackTrail">VOLTAR PARA A TRILHA</button>
+    </div>
+  </div>`;
+  attachBack();
+  if(m.mode==='topic')document.querySelector('#mRestudy').onclick=()=>renderMissionStudy(m.topicId);
+  document.querySelector('#mRetry').onclick=()=>{
+    if(m.mode==='topic')startQuiz(m.topicId);
+    else if(m.mode==='final'){mission={mode:'final',hearts:5,current:0,correctCount:0,questions:generateFinalQuestions(),weakThisRun:new Set()};renderQuestion();}
+    else{mission={mode:'review',hearts:5,current:0,correctCount:0,questions:generateReviewQuestions(),weakThisRun:new Set()};renderQuestion();}
+  };
+  document.querySelector('#mBackTrail').onclick=closeMission;
+}
+function confettiBurst(container){
+  const colors=['#00b6c1','#ffbd4b','#8e7cf5','#39c07a','#ff8fa3'];
+  let html='';
+  for(let i=0;i<24;i++){
+    const left=Math.random()*100, delay=Math.random()*0.4, color=colors[i%colors.length];
+    html+=`<span class="confetti" style="left:${left}%;background:${color};animation-delay:${delay}s"></span>`;
+  }
+  container.style.position='relative';
+  container.insertAdjacentHTML('afterbegin',`<div class="confetti-wrap">${html}</div>`);
+}
+function finishMission(){
+  const m=mission;
+  if(m.mode==='topic'){
+    const res=completeTopic(m.topicId,m.correctCount,m.questions.length);
+    const t=gameTopics[m.topicId];
+    if(res.pct<60){
+      const body=document.querySelector('#missionBody');
+      body.innerHTML=`${missionHeader(missionTitle(),m.hearts)}<div class="m-body m-fail">
+        <div class="m-icon">💙</div>
+        <h2>VOCÊ ESTÁ APRENDENDO!</h2>
+        <p>Você acertou ${m.correctCount} de ${m.questions.length}. Essa etapa precisa de mais uma revisão — não precisa acertar tudo de primeira.</p>
+        <div class="m-fail-actions">
+          <button class="m-btn m-btn-primary" id="mRestudy">REVISAR NOVAMENTE</button>
+          <button class="m-btn m-btn-secondary" id="mRetry">TENTAR DE NOVO</button>
+          <button class="m-btn m-btn-secondary" id="mBackTrail">VOLTAR PARA A TRILHA</button>
+        </div>
+      </div>`;
+      attachBack();
+      document.querySelector('#mRestudy').onclick=()=>renderMissionStudy(m.topicId);
+      document.querySelector('#mRetry').onclick=()=>startQuiz(m.topicId);
+      document.querySelector('#mBackTrail').onclick=closeMission;
+      return;
+    }
+    const body=document.querySelector('#missionBody');
+    body.innerHTML=`${missionHeader(missionTitle(),m.hearts)}<div class="m-body m-complete" id="mCompleteBody">
+      <div class="m-icon">🎉</div>
+      <h2>ETAPA CONCLUÍDA!</h2>
+      <div class="m-sub">${esc(t.title)}</div>
+      <div class="m-stars">${'★'.repeat(res.stars)}${'☆'.repeat(3-res.stars)}</div>
+      <div class="m-xp-big">+${res.xpGain} XP</div>
+      <div class="m-streakline">🔥 Sequência: ${gameState.streak} ${gameState.streak===1?'dia':'dias'}</div>
+      <div class="m-mascot-line"><span>🏆</span><div><b>Prigeosc:</b> mais uma etapa conquistada! Mandou muito bem.</div></div>
+      ${rewardsBlockHtml(m.topicId)}
+      <div class="m-fail-actions">
+        ${nextTopicId(m.topicId)!==null?`<button class="m-btn m-btn-primary" id="mNextTopic">PRÓXIMA ETAPA →</button>`:''}
+        <button class="m-btn m-btn-secondary" id="mBackTrail2">VOLTAR PARA A TRILHA</button>
+      </div>
+    </div>`;
+    attachBack();
+    confettiBurst(document.querySelector('#mCompleteBody'));
+    attachRewardThumbs();
+    const nt=nextTopicId(m.topicId);
+    if(nt!==null)document.querySelector('#mNextTopic').onclick=()=>openMission(nt);
+    document.querySelector('#mBackTrail2').onclick=closeMission;
+    if(res.newAch&&res.newAch.length){
+      const a=res.newAch[0];
+      document.querySelector('#mCompleteBody').insertAdjacentHTML('beforeend',`<div class="m-mascot-line" style="margin-top:14px"><span>${a.icon}</span><div><b>Conquista desbloqueada:</b> ${esc(a.name)} — ${esc(a.desc)}</div></div>`);
+    }
+  }else if(m.mode==='final'){
+    const pct=Math.round(m.correctCount/m.questions.length*100);
+    const passed=pct>=80;
+    addXP(passed?500:m.correctCount*10);
+    if(passed){gameState.finalChallengeCompleted=true;saveGame();checkAchievements();}
+    const body=document.querySelector('#missionBody');
+    body.innerHTML=`${missionHeader(missionTitle(),m.hearts)}<div class="m-body m-complete" id="mCompleteBody">
+      <div class="m-icon">${passed?'🏆':'💙'}</div>
+      <h2>${passed?'MESTRE DA TRILHA':'QUASE LÁ!'}</h2>
+      <div class="m-sub">${passed?'Você concluiu os 30 blocos de revisão!':'Você acertou '+pct+'%. Tente novamente para conquistar o título.'}</div>
+      ${passed?`<div class="m-stars">★★★★★</div><div class="m-xp-big">+500 XP</div><div class="m-streakline">PRIGEOSC ESTÁ ORGULHOSA DE VOCÊ 💙</div>`:''}
+      <div class="m-fail-actions">
+        <button class="m-btn m-btn-secondary" id="mBackTrail2">VOLTAR PARA A TRILHA</button>
+      </div>
+    </div>`;
+    attachBack();
+    if(passed)confettiBurst(document.querySelector('#mCompleteBody'));
+    document.querySelector('#mBackTrail2').onclick=closeMission;
+  }else{
+    // review mode
+    const correctSet=m.reviewedCorrect||new Set();
+    gameState.weakTopics=gameState.weakTopics.filter(id=>!correctSet.has(id));
+    addXP(m.correctCount*5);
+    saveGame();
+    const body=document.querySelector('#missionBody');
+    body.innerHTML=`${missionHeader(missionTitle(),m.hearts)}<div class="m-body m-complete" id="mCompleteBody">
+      <div class="m-icon">🔁</div>
+      <h2>REVISÃO CONCLUÍDA</h2>
+      <div class="m-sub">Você acertou ${m.correctCount} de ${m.questions.length}. Seu mapa está ficando completo.</div>
+      <div class="m-fail-actions"><button class="m-btn m-btn-secondary" id="mBackTrail2">VOLTAR PARA A TRILHA</button></div>
+    </div>`;
+    attachBack();
+    document.querySelector('#mBackTrail2').onclick=closeMission;
+  }
+}
+function nextTopicId(id){return id+1<gameTopics.length?id+1:null;}
+
+/* ================= RECOMPENSAS (mapas mentais) ================= */
+function rewardsBlockHtml(topicId){
+  const rewards=rewardsFor(topicId);
+  if(!rewards.length)return '';
+  return `<div class="m-section-label" style="justify-content:center">🎁 ${rewards.length>1?'Recompensas desbloqueadas':'Recompensa desbloqueada'}</div>
+    <div class="m-reward-grid">${rewards.map((r,i)=>`<button class="m-reward-thumb" data-reward="${esc(r)}" data-idx="${i}" aria-label="Ver mapa mental ${i+1} da etapa ${topicId+1}"><img alt="Mapa mental — etapa ${topicId+1}" loading="lazy"></button>`).join('')}</div>`;
+}
+function attachRewardThumbs(){
+  document.querySelectorAll('.m-reward-thumb').forEach(btn=>{
+    const img=btn.querySelector('img');
+    loadRewardImage(img,btn.dataset.reward);
+    btn.onclick=()=>openRewardLightbox(btn.dataset.reward);
+  });
+}
+function openRewardLightbox(basePath){
+  const img=document.querySelector('#lightboxImg');
+  img.alt='Mapa mental';
+  loadRewardImage(img,basePath);
+  document.querySelector('#lightboxDownload').href=basePath+'.jpg';
+  document.querySelector('#rewardLightbox').showModal();
+}
+function renderMapsGallery(){
+  const grid=document.querySelector('#mapsGrid');
+  grid.innerHTML=gameTopics.map(t=>{
+    const done=gameState.completedTopics.includes(t.id);
+    const rewards=rewardsFor(t.id);
+    if(!rewards.length)return '';
+    if(!done){
+      return `<div class="maps-card locked" aria-label="Etapa ${t.id+1} ainda bloqueada"><div style="height:90px;display:flex;align-items:center;justify-content:center;font-size:28px;background:#eef3f6;border-radius:8px;margin-bottom:6px">🔒</div><b>Etapa ${String(t.id+1).padStart(2,'0')}</b></div>`;
+    }
+    return rewards.map((r,i)=>`<button class="maps-card" data-reward="${esc(r)}" aria-label="Ver mapa mental da etapa ${t.id+1}"><img alt="Mapa mental — ${esc(t.title)}" loading="lazy"><b>Etapa ${String(t.id+1).padStart(2,'0')}${rewards.length>1?' · '+(i+1):''}</b></button>`).join('');
+  }).join('')||'<p class="map-empty">Nenhum mapa cadastrado ainda.</p>';
+  grid.querySelectorAll('.maps-card[data-reward]').forEach(btn=>{
+    const img=btn.querySelector('img');
+    if(img)loadRewardImage(img,btn.dataset.reward);
+    btn.onclick=()=>openRewardLightbox(btn.dataset.reward);
+  });
+}
+
+/* ================= SETTINGS MODAL ================= */
+function initSettings(){
+  document.querySelector('#openSettings').onclick=()=>document.querySelector('#settingsModal').showModal();
+  const mobileBtn=document.querySelector('#openSettingsMobile');
+  if(mobileBtn)mobileBtn.onclick=()=>document.querySelector('#settingsModal').showModal();
+  const trilhaBtn=document.querySelector('#openSettingsFromTrilha');
+  if(trilhaBtn)trilhaBtn.onclick=()=>document.querySelector('#settingsModal').showModal();
+  document.querySelectorAll('.close').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+  document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.close();}));
+  document.querySelector('#askReset').onclick=()=>document.querySelector('#confirmReset').classList.add('show');
+  document.querySelector('#cancelReset').onclick=()=>document.querySelector('#confirmReset').classList.remove('show');
+  document.querySelector('#doReset').onclick=resetGame;
+}
+
+/* ================= NAVIGATION (desktop + mobile bottom bar) ================= */
+function initNav(){
+  document.querySelectorAll('[data-nav]').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const target=el.dataset.nav;
+      if(target==='ach'){document.querySelector('#achModal').showModal();return;}
+      if(target==='review'){openReview();return;}
+      if(target==='maps'){renderMapsGallery();document.querySelector('#mapsModal').showModal();return;}
+      const sec=document.querySelector(target);
+      if(sec)sec.scrollIntoView({behavior:'smooth'});
+    });
+  });
+}
+
+/* ================= INIT ================= */
+function init(){
+  document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{
+    topicFilter=b.dataset.filter;
+    document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));
+    renderGameMap();
+  });
+
+  initSettings();
+  initNav();
+  renderAll();
+  document.body.classList.add('has-bottom-nav');
+}
+document.addEventListener('DOMContentLoaded',init);
+
+</script>
+</body>
+</html>
